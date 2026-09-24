@@ -8,72 +8,75 @@
     <title>Bingie Support</title>
 
     <style>
+
+        :root {
+            color-scheme: dark;
+            --page: #0c0c14;
+            --surface: #171727;
+            --surface-soft: #202035;
+            --text: #f5f3ff;
+            --muted: #b7b2ca;
+            --border: rgba(255,255,255,.11);
+            --accent: #be9aff;
+            --accent-2: #ff90c2;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            background: radial-gradient(ellipse 65% 30% at 50% -12%, #492d67 0%, transparent 90%), var(--page);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-underline-offset: 3px; }
+        a:hover { color: var(--accent-2); }
+        a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 4px; border-radius: 3px; }
+        h1 { letter-spacing: -.045em; line-height: 1.12; }
+        h2 { letter-spacing: -.02em; line-height: 1.3; }
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 14px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+
+        body {
             max-width: 850px;
             margin: 0 auto;
             padding: 50px 24px;
-            line-height: 1.7;
-            color: #222222;
-            background-color: #ffffff;
         }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 8px;
-        }
-
+        h1 { font-size: clamp(32px, 6vw, 45px); margin-bottom: 8px; }
         h2 {
             font-size: 23px;
             margin-top: 40px;
             margin-bottom: 12px;
+            color: var(--accent);
         }
-
-        p {
-            margin-bottom: 16px;
-        }
-
-        ul {
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            color: #666666;
-            margin-bottom: 40px;
-        }
-
+        h3 { font-size: 18px; margin-top: 24px; margin-bottom: 8px; }
+        p { margin-bottom: 16px; color: #ddd8e9; }
+        ul { margin-bottom: 20px; color: #ddd8e9; }
+        li { margin-bottom: 8px; }
+        .subtitle { color: var(--muted); margin-bottom: 40px; }
         .support-box {
             margin-top: 24px;
             padding: 24px;
-            background-color: #f5f5f5;
-            border-radius: 12px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
         }
-
         .faq {
             margin-top: 24px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid var(--border);
         }
-
-        .faq:last-child {
-            border-bottom: none;
-        }
-
-        a {
-            color: #0066cc;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #dddddd;
-            color: #777777;
-            font-size: 14px;
-        }
+        .faq:last-child { border-bottom: none; }
+        @media (max-width: 480px) { body { padding: 36px 20px; } }
     </style>
 </head>
 

@@ -7,11 +7,42 @@
     <title>Bingie</title>
 
     <style>
+
+        :root {
+            color-scheme: dark;
+            --page: #0c0c14;
+            --surface: #171727;
+            --surface-soft: #202035;
+            --text: #f5f3ff;
+            --muted: #b7b2ca;
+            --border: rgba(255,255,255,.11);
+            --accent: #be9aff;
+            --accent-2: #ff90c2;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
             margin: 0;
-            background-color: #ffffff;
-            color: #222222;
+            background: radial-gradient(ellipse 65% 30% at 50% -12%, #492d67 0%, transparent 90%), var(--page);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-underline-offset: 3px; }
+        a:hover { color: var(--accent-2); }
+        a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 4px; border-radius: 3px; }
+        h1 { letter-spacing: -.045em; line-height: 1.12; }
+        h2 { letter-spacing: -.02em; line-height: 1.3; }
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 14px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
         }
 
         .container {
@@ -20,53 +51,46 @@
             padding: 80px 24px;
             text-align: center;
         }
-
         h1 {
-            font-size: 48px;
+            font-size: clamp(42px, 8vw, 60px);
             margin-bottom: 10px;
+            background: linear-gradient(100deg, #b28aff, #f596c9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
         .tagline {
             font-size: 20px;
-            color: #666666;
+            color: var(--muted);
             margin-bottom: 45px;
         }
-
         .description {
             font-size: 17px;
             line-height: 1.7;
             max-width: 600px;
             margin: 0 auto 45px auto;
+            color: #ddd8e9;
         }
-
         .links {
             display: flex;
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
         }
-
         .button {
             display: inline-block;
             padding: 14px 24px;
             text-decoration: none;
-            border-radius: 10px;
-            background-color: #222222;
-            color: #ffffff;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
+            border-radius: 11px;
+            background: linear-gradient(100deg, #b28aff, #f596c9);
+            color: #1a1124;
+            font-weight: 800;
+            transition: filter 0.2s ease;
         }
-
-        .button:hover {
-            opacity: 0.8;
-        }
-
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #dddddd;
-            color: #777777;
-            font-size: 14px;
+        .button:hover { color: #1a1124; filter: brightness(1.1); }
+        footer { margin-top: 80px; }
+        @media (max-width: 480px) {
+            .container { padding: 56px 20px; }
         }
     </style>
 </head>
